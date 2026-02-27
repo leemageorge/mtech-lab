@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Define Theme */
+@theme {
+  --color-mtech-orange: #FF5A1F;
+  --color-mtech-dark: #020205
+}
+
+/* Optional */
+body {
+  cursor: none;
+}
