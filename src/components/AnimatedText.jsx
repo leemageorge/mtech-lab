@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
+import { motion, useSpring, useInView, useMotionValue } from "framer-motion";
 
 /* ===========================
    LetterReveal Component
@@ -69,7 +70,10 @@ export const LetterReveal = ({
    TextScramble Component
 =========================== */
 
-const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+
+
+const characters =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 export const TextScramble = ({
   text,
@@ -78,33 +82,30 @@ export const TextScramble = ({
   once = true,
 }) => {
   const [displayText, setDisplayText] = useState(text);
-  const [isScrambling, setIsScrambling] = useState(false);
   const iterationRef = useRef(0);
   const frameRef = useRef(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once });
 
-  const startScramble = () => {
-    if (isScrambling) return;
-
-    setIsScrambling(true);
+  const startScramble = useCallback(() => {
     iterationRef.current = 0;
 
     const scramble = () => {
-      setDisplayText(
+      setDisplayText(() =>
         text
           .split("")
-          .map((char, index) => {
+          .map((_, index) => {
             if (index < iterationRef.current) {
               return text[index];
             }
-            return characters[Math.floor(Math.random() * characters.length)];
+            return characters[
+              Math.floor(Math.random() * characters.length)
+            ];
           })
           .join("")
       );
 
       if (iterationRef.current >= text.length) {
-        setIsScrambling(false);
         cancelAnimationFrame(frameRef.current);
         return;
       }
@@ -114,7 +115,7 @@ export const TextScramble = ({
     };
 
     frameRef.current = requestAnimationFrame(scramble);
-  };
+  }, [text]);
 
   useEffect(() => {
     if (trigger === "view" && isInView) {
@@ -122,9 +123,11 @@ export const TextScramble = ({
     }
 
     return () => {
-      cancelAnimationFrame(frameRef.current);
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+      }
     };
-  }, [isInView, trigger]);
+  }, [isInView, trigger, startScramble]);
 
   return (
     <span
@@ -136,7 +139,6 @@ export const TextScramble = ({
     </span>
   );
 };
-
 /* ===========================
    MarqueeText Component
 =========================== */
@@ -160,5 +162,46 @@ export const MarqueeText = ({
         <span className="mr-8">{text}</span>
       </motion.div>
     </div>
+  );
+};
+
+/* ===========================
+   Magnetic Button
+=========================== */
+
+export const MagneticButton = ({ children, className = "", onClick }) => {
+  const ref = useRef(null);
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const springX = useSpring(x, { stiffness: 150, damping: 15 });
+  const springY = useSpring(y, { stiffness: 150, damping: 15 });
+
+  const handleMouseMove = (e) => {
+    const rect = ref.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    x.set((e.clientX - centerX) * 0.3);
+    y.set((e.clientY - centerY) * 0.3);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.button
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onClick={onClick}
+      style={{ x: springX, y: springY }}
+      className={`inline-block relative ${className}`}
+    >
+      {children}
+    </motion.button>
   );
 };
