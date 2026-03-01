@@ -62,7 +62,7 @@ const Hero = () => {
               </MagneticButton>
             </Link>
             <Link to="tel:+919633889848">
-              <MagneticButton className="px-8 py-5 bg-white/5 border border-mtech-dark/30 rounded-full flex items-center gap-3 group">
+              <MagneticButton className="px-8 py-5 bg-white/15 border border-white/15 rounded-full flex items-center gap-3 group">
                 <span className="text-white font-black uppercase tracking-widest text-xs">
                   Book Free Consultation
                 </span>
