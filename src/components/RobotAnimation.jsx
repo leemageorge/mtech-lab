@@ -63,6 +63,7 @@ const RobotAnimation = () => {
         initial={{ scale: 0.3, y: 120, opacity: 0 }}
         animate={{ scale: 1, y: -80, opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.8 }}
+        viewport={{once:true, amount:0.3}}
         onAnimationComplete={() => setIsReady(true)}
         style={{
           x: smoothX,

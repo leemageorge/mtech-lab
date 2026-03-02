@@ -10,7 +10,7 @@ export const LetterReveal = ({
   className = "",
   delay = 0,
   stagger = 0.02,
-  once = true,
+  once = false,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once });
@@ -54,12 +54,15 @@ export const LetterReveal = ({
       className={className}
     >
       {text.split(" ").map((word, index) => (
-        <span key={index} className="whitespace-nowrap mr-1 flex">
+        <span key={index} className="whitespace-nowrap inline-flex">
           {word.split("").map((letter, i) => (
             <motion.span key={i} variants={child} className="inline-block">
               {letter}
             </motion.span>
           ))}
+          {index !== text.split(" ").length - 1 && (
+      <span className="inline-block">&nbsp;</span>
+    )}
         </span>
       ))}
     </motion.div>
@@ -118,7 +121,7 @@ export const TextScramble = ({
   }, [text]);
 
   useEffect(() => {
-    if (trigger === "view" && isInView) {
+    if (trigger === "view" || trigger === "hover" && isInView) {
       startScramble();
     }
 

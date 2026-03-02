@@ -5,11 +5,12 @@ import { easeInOut, motion } from "framer-motion";
 import { Phone, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Hero = () => {
+const Hero = () => {  
   return (
-    <div className="realtive flex items-center pt-24 overflow-hidden bg-linear-to-br from-mtech-dark via-[050510] to-[#0A0A20] ">
-      <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12">
-        <div className="flex flex-col mb-8">
+    <div className="pt-44  overflow-hidden bg-linear-to-br from-mtech-dark via-[050510] to-[#0A0A20]">
+    <div className="realtive flex items-center ">
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 ">
+        <div className="flex flex-col">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,7 +41,7 @@ const Hero = () => {
             </div>
           </motion.div>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
             viewport={{ once: false }}
@@ -62,7 +63,7 @@ const Hero = () => {
               </MagneticButton>
             </Link>
             <Link to="tel:+919633889848">
-              <MagneticButton className="px-8 py-5 bg-white/15 border border-white/15 rounded-full flex items-center gap-3 group">
+              <MagneticButton className="px-8 py-5 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 group">
                 <span className="text-white font-black uppercase tracking-widest text-xs">
                   Book Free Consultation
                 </span>
@@ -104,6 +105,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

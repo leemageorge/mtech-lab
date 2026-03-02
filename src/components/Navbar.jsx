@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <>
     <nav className={`fixed top-0 left-0 w-full z-100 transition-all duration-500 ${isScrolling ?'py-4':'py-10' }`}>
-        <div className='container max-w-6xl mx-auto px-6'>
+        <div className='container  mx-auto px-6'>
             <div className={`flex items-center justify-between px-8 py-6 rounded-full border transition-all duration-500 ${isScrolling? "bg-mtech-dark/80 backdrop-blur-2xl border-white/10 shadow-2xl shadow-black/50":"bg-transparent border-transparent"}`}>
                 <Link href="/" className='flex items-center gap-3 group relative'>
                 <div className='absolute -inset-4 bg-mtech-orange/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-700 '></div>
@@ -68,7 +68,7 @@ const Navbar = () => {
       exit={{opacity:0,y:-20}}
        className='fixed inset-0 z-90 bg-mtech-dark flex flex-col items-center justify-center pt-20 '>
         <div className='absolute top-12 left-1/2 -translate-x-1/2 '>
-            <img src={logo} alt='MtechLab' className='h-16 w-auto invert brightness-0 ' />
+            <img src={logo} alt='MtechLab' className='h-28 w-auto invert brightness-0 ' />
         </div>
         <div className='flex flex-col items-center gap-8'>
           {
