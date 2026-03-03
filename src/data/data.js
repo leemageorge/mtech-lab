@@ -1,4 +1,4 @@
-import { Award, Code2, Map, Megaphone, Rocket, Search, Shield, TrendingUp, Users } from "lucide-react";
+import { Award, BarChart3, Code2, Handshake, Headphones, Layers, Map, Megaphone, Rocket, Search, Shield, ShieldCheck, TrendingUp, Users } from "lucide-react";
 
  export const navLinks = [
     { name: "Services", path: "/services" },
@@ -134,4 +134,13 @@ export const projects = [
     results: "Refreshed identity led to 50% higher brand engagement.",
     className: "lg:col-span-2 aspect-[21/9]"
   }
+];
+
+export const features = [
+  { name: "Strategy + Tech", icon: ShieldCheck, description: "Deep integration of business strategy with high-performance technology." },
+  { name: "Result Oriented", icon: Rocket, description: "Every line of code and marketing campaign is focused on measurable growth." },
+  { name: "Transparent Reporting", icon: BarChart3, description: "Real-time visibility into performance metrics and project progress." },
+  { name: "Dedicated Support", icon: Headphones, description: "A specialized vanguard team supporting your business scaling 24/7." },
+  { name: "Scalable Architecture", icon: Layers, description: "Systems built to handle massive traffic and data growth from day one." },
+  { name: "Growth Partnership", icon: Handshake, description: "We are more than an agency; we are your long-term technical co-pilots." }
 ];
