@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </div>
-      <div className="uppercase absolute top-1/2 right-0 -translate-y-1/2 opacity-[0.02] font-black text-white pointer-events-none">
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 opacity-[0.02] text-white text-[25vw] font-black pointer-events-none select-none tracking-tighter leading-none uppercase pr-[-10%]">
         mtech
       </div>
     </div>
