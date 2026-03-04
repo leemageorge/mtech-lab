@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 const ContactPage = () => {
   return (
-    <div className="bg-mtech-dark min-h-screen relative pt-56 mb-20">
+    <div className="bg-mtech-dark min-h-screen relative pt-56 mb-20 overflow-hidden">
       <div className="container mx-auto px-6 ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
           <div className="lg:col-span-6">
