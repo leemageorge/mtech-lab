@@ -1,4 +1,4 @@
-import { Award, BarChart3, Code2, Handshake, Headphones, Layers, Map, Megaphone, Rocket, Search, Shield, ShieldCheck, TrendingUp, Users } from "lucide-react";
+import { Award, BarChart3, Code2, Github, Handshake, Headphones, Instagram, Layers, Linkedin, Map, Megaphone, Rocket, Search, Shield, ShieldCheck, TrendingUp, Twitter, Users } from "lucide-react";
 
  export const navLinks = [
     { name: "Services", path: "/services" },
@@ -144,3 +144,47 @@ export const features = [
   { name: "Scalable Architecture", icon: Layers, description: "Systems built to handle massive traffic and data growth from day one." },
   { name: "Growth Partnership", icon: Handshake, description: "We are more than an agency; we are your long-term technical co-pilots." }
 ];
+
+export const reviews = [
+  {
+    text: "MTechLab transformed our business idea into a scalable digital product. Their technical precision and growth mindset are truly unique in the agency space.",
+    author: "Alexander Vance",
+    role: "CEO, Vance Financial",
+    logo: "VANCE"
+  },
+  {
+    text: "Professional execution with strong marketing strategy support. They don't just build apps; they build revenue-generating ecosystems.",
+    author: "Elena Rossi",
+    role: "CTO, LuxCore Systems",
+    logo: "LUXCORE"
+  },
+  {
+    text: "The level of engineering performance is unmatched. Our system response times dropped by 60% while the visual prestige reached new heights.",
+    author: "Marcus Thorne",
+    role: "Founder, Thorne Aviation",
+    logo: "THORNE"
+  }
+];
+
+export const SocialMediaIcons = [
+  {
+    title: "Twitter",
+    icon: Twitter,
+    url:"https://twitter.com/mtechLab"
+  },
+    {
+    title: "LinkedIn",
+    icon: Linkedin,
+    url:"https://www.linkedin.com/in/mtechLab"
+  },
+  {
+    title: "Github",
+    icon: Github,
+    url:"https://github.com/mtechLab"
+  },
+  {
+    title: "Instagram",
+    icon: Instagram,
+    url:"https://www.instagram.com/mtechLab"
+  },
+]
