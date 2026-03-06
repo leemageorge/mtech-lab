@@ -185,6 +185,6 @@ export const SocialMediaIcons = [
   {
     title: "Instagram",
     icon: Instagram,
-    url:"https://www.instagram.com/mtechLab"
+    url:"https://www.instagram.com/mtechlabindia/?hl=en"
   },
 ]

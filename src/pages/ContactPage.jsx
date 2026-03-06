@@ -46,7 +46,7 @@ const ContactPage = () => {
                     Email Us
                   </h5>
                   <p className="text-xl text-white font-bold">
-                    hello@mtechlab.agency
+                    care@mtechlab.co.in
                   </p>
                 </div>
               </div>
@@ -62,7 +62,7 @@ const ContactPage = () => {
                     call Us
                   </h5>
                   <p className="text-xl text-white font-bold">
-                    +1 (888) M-TECH-01
+                    0480 405 1132
                   </p>
                 </div>
               </div>
@@ -75,10 +75,10 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h5 className="text-[10px] tracking-widest uppercase font-black text-white/20 mb-1">
-                    Headquarters
+                    Head Office
                   </h5>
                   <p className="text-xl text-white font-bold">
-                    Obsidian Tower, New York
+                    Kerala,India
                   </p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const ContactPage = () => {
                 LinkedIn
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/mtechlabindia/?hl=en" target="_blank"
                 className="text-white/20 hover:text-white transition-colors text-xs font-black uppercase tracking-wides"
               >
                 Instagram
